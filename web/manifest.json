@@ -1,6 +1,6 @@
 {
-    "name": "missed_prayers",
-    "short_name": "missed_prayers",
+    "name": "Missed prayers",
+    "short_name": "Missed prayers",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -10,11 +10,40 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_remix: ^0.0.3
+  get_it: ^7.6.6
+  google_fonts: ^6.1.0
+  auto_route: ^7.8.4
+  flutter_svg: ^2.0.9
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  build_runner: ^2.4.8
+  flutter_gen_runner: ^5.4.0
+  auto_route_generator: ^7.3.2
+  flutter_launcher_icons: ^0.13.1
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/color/
+    - assets/images/
+
+flutter_gen:
+  output: lib/src/gen/
+  colors:
+    inputs:
+      - assets/color/colors.xml
+
+flutter_launcher_icons:
+  android: 'launcher_icon'
+  ios: true
+  image_path: 'assets/images/app_icon.png'
+  web:
+    generate: true
+  windows:
+    generate: true
+  macos:
+    generate: true
