@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'core/di/dependency_manager.dart';
 
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 

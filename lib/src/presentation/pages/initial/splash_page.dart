@@ -28,17 +28,15 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
       [
         TweenSequenceItem(tween: Tween(begin: 0.0, end: 1.0), weight: 1),
         TweenSequenceItem(tween: Tween(begin: 1.0, end: 1.0), weight: 4),
-        TweenSequenceItem(tween: Tween(begin: 1.0, end: 0.0), weight: 1),
       ],
     ).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.ease),
+      CurvedAnimation(parent: _controller, curve: Curves.easeIn),
     );
-
     _controller.addStatusListener(
       (status) {
         if (status == AnimationStatus.completed) {
           context.router
-              .pushAndPopUntil(const HomeRoute(), predicate: (_) => false);
+              .pushAndPopUntil(const AuthRoute(), predicate: (_) => false);
         }
       },
     );
