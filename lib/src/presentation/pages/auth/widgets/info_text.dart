@@ -8,12 +8,15 @@ class InfoText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      'Qazo namozlaringizni aniqlash uchun bizga ba’zi ma’lumotlaringiz kerak bo’ladi.',
-      style: GoogleFonts.prompt(
-        color: ColorName.black,
-        fontSize: 24,
-        fontWeight: FontWeight.w600,
+    return Center(
+      child: Text(
+        'Qazo namozlaringizni aniqlash uchun bizga ba’zi ma’lumotlaringiz kerak bo’ladi.',
+        textAlign: TextAlign.center,
+        style: GoogleFonts.prompt(
+          color: ColorName.black,
+          fontSize: 24,
+          fontWeight: FontWeight.w600,
+        ),
       ),
     );
   }

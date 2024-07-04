@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:missed_prayers/src/gen/colors.gen.dart';
+
+import '../../../gen/colors.gen.dart';
 
 class AcceptButton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -16,12 +17,25 @@ class AcceptButton extends StatelessWidget {
         backgroundColor: ColorName.primary,
       ),
       onPressed: onPressed,
-      child: Text(
-        title,
-        style: GoogleFonts.prompt(
-          color: ColorName.white,
-          fontSize: 16,
-          fontWeight: FontWeight.w500,
+      child: AnimatedSwitcher(
+        duration: const Duration(milliseconds: 150),
+        transitionBuilder: (Widget child, Animation<double> animation) {
+          return SlideTransition(
+            position: Tween<Offset>(
+              begin: const Offset(0.5, 0.0),
+              end: const Offset(0.0, 0.0),
+            ).animate(animation),
+            child: child,
+          );
+        },
+        child: Text(
+          title,
+          key: ValueKey<String>(title),
+          style: GoogleFonts.prompt(
+            color: ColorName.white,
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
+          ),
         ),
       ),
     );

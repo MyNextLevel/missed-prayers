@@ -1,6 +1,6 @@
 {
-    "name": "Missed prayers",
-    "short_name": "Missed prayers",
+    "name": "Qazo namozlari",
+    "short_name": "Qazo namozlari",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

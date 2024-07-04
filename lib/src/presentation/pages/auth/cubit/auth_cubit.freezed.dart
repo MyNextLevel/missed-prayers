@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$AuthState {
   int get currentPage => throw _privateConstructorUsedError;
+  double get dateProgress => throw _privateConstructorUsedError;
   String get acceptButtonText => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -29,7 +30,7 @@ abstract class $AuthStateCopyWith<$Res> {
   factory $AuthStateCopyWith(AuthState value, $Res Function(AuthState) then) =
       _$AuthStateCopyWithImpl<$Res, AuthState>;
   @useResult
-  $Res call({int currentPage, String acceptButtonText});
+  $Res call({int currentPage, double dateProgress, String acceptButtonText});
 }
 
 /// @nodoc
@@ -46,6 +47,7 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
   @override
   $Res call({
     Object? currentPage = null,
+    Object? dateProgress = null,
     Object? acceptButtonText = null,
   }) {
     return _then(_value.copyWith(
@@ -53,6 +55,10 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.currentPage
           : currentPage // ignore: cast_nullable_to_non_nullable
               as int,
+      dateProgress: null == dateProgress
+          ? _value.dateProgress
+          : dateProgress // ignore: cast_nullable_to_non_nullable
+              as double,
       acceptButtonText: null == acceptButtonText
           ? _value.acceptButtonText
           : acceptButtonText // ignore: cast_nullable_to_non_nullable
@@ -69,7 +75,7 @@ abstract class _$$AuthStateImplCopyWith<$Res>
       __$$AuthStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int currentPage, String acceptButtonText});
+  $Res call({int currentPage, double dateProgress, String acceptButtonText});
 }
 
 /// @nodoc
@@ -84,6 +90,7 @@ class __$$AuthStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? currentPage = null,
+    Object? dateProgress = null,
     Object? acceptButtonText = null,
   }) {
     return _then(_$AuthStateImpl(
@@ -91,6 +98,10 @@ class __$$AuthStateImplCopyWithImpl<$Res>
           ? _value.currentPage
           : currentPage // ignore: cast_nullable_to_non_nullable
               as int,
+      dateProgress: null == dateProgress
+          ? _value.dateProgress
+          : dateProgress // ignore: cast_nullable_to_non_nullable
+              as double,
       acceptButtonText: null == acceptButtonText
           ? _value.acceptButtonText
           : acceptButtonText // ignore: cast_nullable_to_non_nullable
@@ -103,18 +114,23 @@ class __$$AuthStateImplCopyWithImpl<$Res>
 
 class _$AuthStateImpl implements _AuthState {
   const _$AuthStateImpl(
-      {this.currentPage = 0, this.acceptButtonText = 'Tushunarli'});
+      {this.currentPage = 0,
+      this.dateProgress = 0,
+      this.acceptButtonText = 'Tushunarli'});
 
   @override
   @JsonKey()
   final int currentPage;
   @override
   @JsonKey()
+  final double dateProgress;
+  @override
+  @JsonKey()
   final String acceptButtonText;
 
   @override
   String toString() {
-    return 'AuthState(currentPage: $currentPage, acceptButtonText: $acceptButtonText)';
+    return 'AuthState(currentPage: $currentPage, dateProgress: $dateProgress, acceptButtonText: $acceptButtonText)';
   }
 
   @override
@@ -124,12 +140,15 @@ class _$AuthStateImpl implements _AuthState {
             other is _$AuthStateImpl &&
             (identical(other.currentPage, currentPage) ||
                 other.currentPage == currentPage) &&
+            (identical(other.dateProgress, dateProgress) ||
+                other.dateProgress == dateProgress) &&
             (identical(other.acceptButtonText, acceptButtonText) ||
                 other.acceptButtonText == acceptButtonText));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, currentPage, acceptButtonText);
+  int get hashCode =>
+      Object.hash(runtimeType, currentPage, dateProgress, acceptButtonText);
 
   @JsonKey(ignore: true)
   @override
@@ -140,10 +159,14 @@ class _$AuthStateImpl implements _AuthState {
 
 abstract class _AuthState implements AuthState {
   const factory _AuthState(
-      {final int currentPage, final String acceptButtonText}) = _$AuthStateImpl;
+      {final int currentPage,
+      final double dateProgress,
+      final String acceptButtonText}) = _$AuthStateImpl;
 
   @override
   int get currentPage;
+  @override
+  double get dateProgress;
   @override
   String get acceptButtonText;
   @override

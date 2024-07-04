@@ -8,9 +8,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Missed Prayers',
+      title: 'Qazo namozlari',
       debugShowCheckedModeBanner: false,
       routerDelegate: appRouter.delegate(),
+      locale: const Locale('uz'),
       routeInformationParser: appRouter.defaultRouteParser(),
     );
   }
